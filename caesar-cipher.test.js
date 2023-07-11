@@ -1,3 +1,5 @@
+import { caesarCipher } from './caesar-cipher';
+
 test('should return a shifted string', () => {
   expect(caesarCipher('abc', 1)).toBe('bcd');
 });
