@@ -17,14 +17,26 @@ test('should subtract two numbers', () => {
 test('should divide two numbers', () => {
   expect(calculator.divide(10, 5)).toBe(2);
 });
-test('should return float values', () => {
+test('should return trimmed float values (divide)', () => {
   expect(calculator.divide(1, 3)).toBe(0.33);
 });
 
 test('should multiply two numbers', () => {
   expect(calculator.multiply(2, 5)).toBe(10);
 });
+test('should return float values (multiply)', () => {
+  expect(calculator.multiply(2, 0.125)).toBe(0.25);
+});
 
-test('should return NaN for non-numbers', () => {
+test('should return NaN for non-numbers (add)', () => {
   expect(calculator.add('aaaa', false)).toBe(NaN);
+});
+test('should return NaN for non-numbers (subtract)', () => {
+  expect(calculator.subtract('aaaa', false)).toBe(NaN);
+});
+test('should return NaN for non-numbers (divide)', () => {
+  expect(calculator.divide('aaaa', false)).toBe(NaN);
+});
+test('should return NaN for non-numbers (multiply)', () => {
+  expect(calculator.multiply('aaaa', false)).toBe(NaN);
 });
