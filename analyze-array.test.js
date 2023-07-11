@@ -1,3 +1,5 @@
+import { analyzeArray } from './analyze-array';
+
 test('should analyze an array of numbers', () => {
   expect(analyzeArray([4, 2, 10, 8, 6])).toEqual({
     average: 6,
@@ -34,7 +36,7 @@ test('should work with one number', () => {
   });
 });
 
-test('properties should be null when no numbers are given', () => {
+test('properties should be null when no numbers are given (including NaN)', () => {
   expect(analyzeArray(['foo', true, null, NaN])).toEqual({
     average: null,
     min: null,
